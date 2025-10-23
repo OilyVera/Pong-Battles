@@ -1,1 +1,57 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pong Battles</title>
+    <style>
+        #ball{
+            border-radius: 50%;
+            width:50px;
+            height:50px;
+            background-color:gainsboro;
+        }
+        .box{
+            position: absolute;
+            left: 0;
+            background-color: gainsboro
+        }
+        #topthing{
+            top: 0;
+            right: 50px;
+            height:150px;
+        }
+        #middlebox{
+            bottom: 0;
+            top:200px;
+            right: 0;
+
+        }
+    </style>
+    
+</head>
+<body>
+    <div id="ball">*</div>
+    <div class="box" id="topthing">WELCOME TO PONG Battles</div>
+    <div class="box" id="middlebox">
+        Game
+        <button id="start">click to start the pong boing</button>
+    </div>
+    <script>
+        let x = 0
+        function loop(){
+            middlebox.style.left = x+"px"
+            x+=6||7
+            requestAnimationFrame(loop)
+        }
+        start.onclick = ()=>{
+            alert('reddy to start')
+            const hi = prompt('Ready? yes/no')
+            if (hi.toLowerCase().startsWith("y")){
+                loop()
+            }
+        }
+    </script>
+</body>
+</html>
